@@ -1,0 +1,141 @@
+/*data section headings*/
+h1 {
+	text-align:center;
+	font-size:40px;
+}
+/*default table styling for scrollable data*/
+table.center {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+th, td {
+	padding:2px;
+	border:1px solid black;
+	font-size:15px;
+}
+
+tr:nth-child(even) {
+	background-color:#cdcdcd;
+}
+/*contain overflow for scrolling tables*/
+.scroll {
+	overflow-y:auto;
+}
+
+/*data Analytics table*/
+#dataAnalytics {
+	position:relative;
+	width:100%;
+	height:140px;
+	border-spacing:30px 0px;
+}
+
+#dataAnalytics td {
+	padding:5px;
+	width:20%;
+	background-color:lightgrey;
+	text-align:center;
+	border:0px;
+	font-size:25px;
+}
+
+#dataAnalytics th {
+	width:20%;
+	padding:0px;
+	height:20px;
+	background-color:lightblue;
+	border:0px;
+	font-size:15px;
+	vertical-align:bottom;
+}
+/*horizontal data sections*/
+.dataSect {
+	font-size:25px;
+	position:relative;
+	margin:0 auto;
+	text-align:center;
+	width:90%;
+	height:560px;
+	padding:10px;
+	border-top:2px solid darkgrey;
+}
+
+/*current day data*/
+#currDayTableBlock {
+	position:absolute;
+	top: 100px;
+	left:52%;
+	height:345px;
+	width:460px;
+}
+
+#currDayGraphBlock {
+	position:absolute;
+	top:95px;
+	right:52%;
+	height:400px;
+	width:500px;
+}
+
+/*hourly data*/
+#hourlyGraphBlock {
+	position:absolute;
+	top:95px;
+	right:52%;
+	height:400px;
+	width: 500px;
+}
+
+#hourlyTableBlock {
+	position:absolute;
+	top: 100px;
+	left:52%;
+	height:345px;
+	width:460px;
+}
+/*avg day data*/
+#avgDayGraphBlock {
+	position:absolute;
+	top:95px;
+	right:52%;
+	height:400px;
+	width: 500px;
+}
+
+#avgDayTableBlock {
+	position:absolute;
+	top: 100px;
+	left:52%;
+	height:345px;
+	width:460px;
+}
+/*graph center*/
+.graph {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#demoGraphBlock {
+	position:relative;
+	top:30px;
+}
+
+#lastEntry {
+	position:relative;
+	top:450px
+}
+
+h3 {
+	position:relative;
+	top:20px;
+}
+
+
+
+
+
+
+
+

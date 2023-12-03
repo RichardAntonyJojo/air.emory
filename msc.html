@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>MSC | Air Emory</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- include highcharts.js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+   
+    <!--include css -->
+    <link rel="stylesheet" type="text/css" href="mscData.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--include javascript functions -->
+    <script src="mscData.js"></script>
+    <!--include moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+    <link rel="icon" href="images/cloud.png">
+
+<style>
+    body {
+        transition: margin-left .5s;
+    }
+
+    /* The sidebar menu */
+    .sidebar {
+        height: 100%;
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color: black; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+        color: white;
+    }
+    /* Position and style the close button (top right corner) */
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: white;
+    }
+    /* The button used to open the sidebar */
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50%;
+    }
+    .openbtn:hover {
+        background-color: #444;
+    }
+    label {
+        display: block;
+    }
+    input {
+        font-size: 20px;
+        color: black;
+    }
+    .grid-analytics {
+        display: grid;
+        grid-gap: 2px 15px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 90%;
+        margin: auto;
+    }
+    .item {
+        background-color: #50BDE4;
+        padding: 5px;
+        text-align: center;
+        color: white;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .numbers {
+        background-color: #ECECEC;
+        padding: 5px;
+        height: 90px;
+        text-align: center;
+        font-size: 25px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-style: solid;
+        border-color: #50BDE4;
+        border-width: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .graph {
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .title {
+        position: relative;
+        text-align: center;
+        font-size: 20px;
+        width:100%;
+    }
+  
+    #submitBtn {
+        background-color:#50BDE4;
+        border: 0px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="content">
+        <div id="nav-placeholder"></div>
+        <script> $(function(){$("#nav-placeholder").load("nav.html");});</script>
+
+        <div id="toggle" style="padding:10px;">
+            <button class="openbtn" onclick="openNav()">&#9776;</button> 
+            <span><b>Data Options</b></span>
+        </div>
+
+        <h5>Math and Science Center</h5>
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="pickDate" style="text-align: center;">
+                <label for="start">Date:</label>
+                <input type="date" id="start" name="date-start" value="" min="2019-06-01" max="">
+            </div>
+            <div id="submitForm" style="text-align: center;">
+                <button type="submit" id="submitBtn" name="submit" onclick="dateChange(object, document.getElementById('start').value)">Submit</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="grid-analytics">
+                        <div class="item">Date</div>
+                        <div class="item">Average PM<sub>2.5</div>
+                        <div class="item">Average Temperature</div>
+                        <div class="item">Average Relative Humidity</div>
+                        <div class="numbers" id="date"></div>
+                        <div class="numbers" id="pm25" style="font-size: 25px;"></div>
+                        <div class="numbers" id="temperature" style="font-size: 25px;"></div>
+                        <div class="numbers" id="relhumid" style="font-size: 25px;"></div>
+                    </div>
+                <div style="margin-left: 4%; margin-right: 4%;">
+                    <div id="rawChartContainer" style="position: relative; top: 50px"></div>
+                    <div id="hourlyChartContainer" style="position: relative; top: 50px"></div>
+                </div>
+                <script>
+                    var defaultUrl = "https://spreadsheets.google.com/feeds/list/1IpmZM0CTu4Ju2vR9nNPbUOFKtJNHCO69ydEH9vAtxWI/1/public/values?alt=json"; 
+                    setDateInput();
+                    showDate();
+                    averages(defaultUrl, maxDate());
+                    initChart(object, defaultUrl, maxDate());
+                </script>
+            </div>
+        </div>
+        
+    <br><br><br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>No earth-b</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/cloud.png">
+
+    <style>
+        .logoContainer {
+            display: inline-block;
+            padding-left: 20px;
+        }
+        .landingContainer {
+            background-color: #85D9F7; 
+            padding-bottom:50px; 
+            padding-top: 50px; 
+            height: 75vh;
+        }
+        .text {
+            display: inline-block;
+            text-align: right;
+            margin-left: 2%;
+        }
+        .infoContainer {
+            text-align: center;
+        }
+        .fas {
+            font-size: 50px;
+            color: #48A9CD;
+        }
+        .fa-cloud {
+            font-size: 300px;
+            color: #48A9CD;
+            text-shadow: 5px 2px 0px white;
+        }
+        .theText {
+            padding-top: 15px;
+            font-size: 18px;
+            font-family: arial;
+            font-weight: bold;
+            color: #747474;
+        }
+        @media only screen and (max-width: 1070px) {
+            .fa-cloud { display: none; }
+            .fas { display: none; }
+        }
+        @media only screen and (max-width: 768px) {
+            h1 { font-size: 80px; }
+            h2 { font-size: 30px; }
+        }
+    </style>
+</head>
+<div class="content">
+    <!--Nav Bar-->
+    <div id="nav-placeholder"></div>
+    <script>$(function(){$("#nav-placeholder").load("nav.html");});</script>
+    <div class="inner">
+    <!--Main info-->
+    <div class="landingContainer row">
+        <div class="leftContainer col-sm-12">
+            <div class="text">
+                <h2>Community based.<br>Student led.<br>Air quality sensor network.</h2>
+                <h1>AIR EMORY</h1>
+            </div>
+            <div class="logoContainer">
+                <i class="fas fa-cloud"></i>
+            </div>
+        </div>
+    </div>
+    <!--Bottom page info: Monitor Pollution, Raise Awareness, Engage the Community-->
+    <div class="bottomInfo row" style="background-color: white; padding:30px; text-align:center;">
+        <div style="width:80%; display:inline-block; padding-top:20px; padding-bottom:20px;">
+        <div class="box col-sm-4">
+            <div class="infoContainer">
+                <div class="theIcon">
+                    <i class="fas fa-eye"></i>
+                </div>
+            <div class="theText">Monitor Pollution</div>
+            </div>
+        </div>
+        <div class="box col-sm-4">
+            <div class="infoContainer">
+                <div class="theIcon">
+                <i class="fas fa-book-open"></i>
+                </div>
+                <div class="theText">Raise Awareness</div>
+                </div>
+        </div>
+        <div class="box col-sm-4">
+            <div class="infoContainer">
+                <div class="theIcon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="theText">Engage the Community</div>
+            </div>
+        </div>
+        </div>
+        
+          <div style="width:90%; padding-top:20px; display:inline-block; padding-bottom:10px; font-size: 12px;">
+            <p>This work is supported by the Environmental Protection Agency under grant #01D14720. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the Environmental Protection Agency, nor does the EPA endorse trade names or recommend the use of commercial products mentioned at this website</p> 
+        </div>
+    </div>
+    </div>
+    </div>'
+         
+</body>
+</html>
